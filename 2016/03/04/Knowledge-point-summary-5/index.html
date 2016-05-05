@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016 | Javion | 进击的前端工程师</title>
+  <title>实习知识点总结(5) | Javion | 进击的前端工程师</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="秒速">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Javion | 进击的前端工程师">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+  <meta name="description" content="移动web开发-viewport对于移动端的网页，一般head标签里都需要添加一行：1&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no&quot; /&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实习知识点总结(5)">
+<meta property="og:url" content="http://yoursite.com/2016/03/04/Knowledge-point-summary-5/index.html">
 <meta property="og:site_name" content="Javion | 进击的前端工程师">
-<meta property="og:description" content="秒速">
+<meta property="og:description" content="移动web开发-viewport对于移动端的网页，一般head标签里都需要添加一行：1&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no&quot; /&amp;gt;">
+<meta property="og:updated_time" content="2016-05-05T06:31:40.129Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javion | 进击的前端工程师">
-<meta name="twitter:description" content="秒速">
+<meta name="twitter:title" content="实习知识点总结(5)">
+<meta name="twitter:description" content="移动web开发-viewport对于移动端的网页，一般head标签里都需要添加一行：1&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no&quot; /&amp;gt;">
   
     <link rel="alternate" href="/atom.xml" title="Javion | 进击的前端工程师" type="application/atom+xml">
   
@@ -53,141 +54,84 @@
 
         
 
-          <section id="main">
-  
-  
+          <section id="main"><article id="post-Knowledge-point-summary-5" class="article article-type-post" itemscope itemprop="blogPost">
+<!--   <div class="article-meta">
+    <small class="article-date">2016-03-04 by Javion</small>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/实习知识点总结/">实习知识点总结</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016年归档</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/11/Knowledge-point-summary-6/">实习知识点总结(6)</a>
+    <h1 class="article-title" itemprop="name">
+      实习知识点总结(5)
     </h1>
   
 
+        <small class="article-date">2016-03-04 by Javion</small>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/Javascript/">Javascript</a></li></ul>
+        <h1 id="移动web开发-viewport"><a href="#移动web开发-viewport" class="headerlink" title="移动web开发-viewport"></a>移动web开发-viewport</h1><p>对于移动端的网页，一般head标签里都需要添加一行：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>viewport的宽度决定了html这个标签的宽度。viewport又分为visual viewport(可视窗口）和layout viewport（布局窗口）。<br>Viewport是手机屏幕上能用来显示我们的网页的那一块区域。但是viewport并不等于浏览器的可视区域。</p>
+<ul>
+<li>width = device-width：设置layout viewport 的宽度，device-width为设备宽度</li>
+<li>initial-scale = 1.0：设置页面的初始缩放值</li>
+<li>minimum-scale = 1.0：允许用户的最小缩放值</li>
+<li>maximum-scale = 1.0：允许用户的最大缩放值</li>
+<li>user-scalable = no：是否允许用户进行缩放</li>
+</ul>
+<p>大多数手机默认的viewport为980，若不加那句话，手机会按viewport为980来显示网页。如果咱们按640比例开发的网页，会变小。<br>页面显示时，页面会根据设置的viewport放大或缩小屏幕，比如页面按宽为640px开发的页面，那放在viewport设置320的屏幕上，会放大一倍。</p>
+<h1 id="jQuery为动态创建的元素绑定事件"><a href="#jQuery为动态创建的元素绑定事件" class="headerlink" title="jQuery为动态创建的元素绑定事件"></a>jQuery为动态创建的元素绑定事件</h1><h2 id="使用jQuery中的on方法"><a href="#使用jQuery中的on方法" class="headerlink" title="使用jQuery中的on方法:"></a>使用jQuery中的on方法:</h2><p>$( a ).on(event, selector, fn );</p>
+<ul>
+<li>a : 对该元素的父节点执行on方法</li>
+<li>Event ：为该元素事件绑定的事件</li>
+<li>Selector ：动态创建的元素</li>
+<li>Fn ：触发事件后执行的方法</li>
+</ul>
+<h2 id="On方法大致原理："><a href="#On方法大致原理：" class="headerlink" title="On方法大致原理："></a>On方法大致原理：</h2><p>每次在父节点上的event都会被执行，但是只有当对selector执行event，会返回需要执行的fn方法。</p>
 
-      <small class="archive-article-date">2016-03-11 by Javion</small>
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <!-- <a data-url="http://yoursite.com/2016/03/04/Knowledge-point-summary-5/" data-id="cinu2lvks00093stqognryvdw" class="article-share-link">Share</a> -->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/移动web开发/">移动web开发</a></li></ul>
+
+    </footer>
   </div>
+<!--   
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/11/Knowledge-point-summary-6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          实习知识点总结(6)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/26/Knowledge-point-summary-4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">实习知识点总结(4)</div>
+    </a>
+  
+</nav>
+
+   -->
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/04/Knowledge-point-summary-5/">实习知识点总结(5)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/移动web开发/">移动web开发</a></li></ul>
-
-      <small class="archive-article-date">2016-03-04 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/26/Knowledge-point-summary-4/">实习知识点总结(4)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/移动web开发/">移动web开发</a></li></ul>
-
-      <small class="archive-article-date">2016-02-26 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/29/Knowledge-point-summary-3/">实习知识点总结(3)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/Javascript/">Javascript</a></li></ul>
-
-      <small class="archive-article-date">2016-01-29 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/22/Knowledge-point-summary-2/">实习知识点总结(2)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Javascript/">Javascript</a></li></ul>
-
-      <small class="archive-article-date">2016-01-22 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/15/Knowledge-point-summary-1/">实习知识点总结(1)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Javascript/">Javascript</a></li></ul>
-
-      <small class="archive-article-date">2016-01-15 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 </section>
 
         

@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016 | Javion | 进击的前端工程师</title>
+  <title>实习知识点总结(1) | Javion | 进击的前端工程师</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="秒速">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Javion | 进击的前端工程师">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+  <meta name="description" content="本文主要是对在公司实习第一周对需要完成项目所要的一些知识点进行收集与总结，主要内容包括一些canvas的基础知识和在做项目过程中遇见的相关javascript问题的解决方案。主要目标是通过学习深入canvas和javascript，完成一个较复杂在线web图片编辑器。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实习知识点总结(1)">
+<meta property="og:url" content="http://yoursite.com/2016/01/15/Knowledge-point-summary-1/index.html">
 <meta property="og:site_name" content="Javion | 进击的前端工程师">
-<meta property="og:description" content="秒速">
+<meta property="og:description" content="本文主要是对在公司实习第一周对需要完成项目所要的一些知识点进行收集与总结，主要内容包括一些canvas的基础知识和在做项目过程中遇见的相关javascript问题的解决方案。主要目标是通过学习深入canvas和javascript，完成一个较复杂在线web图片编辑器。">
+<meta property="og:updated_time" content="2016-05-05T05:49:50.894Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javion | 进击的前端工程师">
-<meta name="twitter:description" content="秒速">
+<meta name="twitter:title" content="实习知识点总结(1)">
+<meta name="twitter:description" content="本文主要是对在公司实习第一周对需要完成项目所要的一些知识点进行收集与总结，主要内容包括一些canvas的基础知识和在做项目过程中遇见的相关javascript问题的解决方案。主要目标是通过学习深入canvas和javascript，完成一个较复杂在线web图片编辑器。">
   
     <link rel="alternate" href="/atom.xml" title="Javion | 进击的前端工程师" type="application/atom+xml">
   
@@ -53,141 +54,88 @@
 
         
 
-          <section id="main">
-  
-  
+          <section id="main"><article id="post-Knowledge-point-summary-1" class="article article-type-post" itemscope itemprop="blogPost">
+<!--   <div class="article-meta">
+    <small class="article-date">2016-01-15 by Javion</small>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/实习知识点总结/">实习知识点总结</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016年归档</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/11/Knowledge-point-summary-6/">实习知识点总结(6)</a>
+    <h1 class="article-title" itemprop="name">
+      实习知识点总结(1)
     </h1>
   
 
+        <small class="article-date">2016-01-15 by Javion</small>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/Javascript/">Javascript</a></li></ul>
+        <p>本文主要是对在公司实习第一周对需要完成项目所要的一些知识点进行收集与总结，主要内容包括一些canvas的基础知识和在做项目过程中遇见的相关javascript问题的解决方案。<br>主要目标是通过学习深入canvas和javascript，完成一个较复杂在线web图片编辑器。</p>
+<a id="more"></a> 
+<h1 id="HTML5-canvas的一些基础知识"><a href="#HTML5-canvas的一些基础知识" class="headerlink" title="HTML5 canvas的一些基础知识"></a>HTML5 canvas的一些基础知识</h1><h2 id="一、关于canvas元素"><a href="#一、关于canvas元素" class="headerlink" title="一、关于canvas元素"></a>一、关于canvas元素</h2><p>负责在页面中设定一个区域，通过JavaScript动态地在这个区域中绘制图形。</p>
+<h2 id="二、canvas元素的大小与绘图表面的大小"><a href="#二、canvas元素的大小与绘图表面的大小" class="headerlink" title="二、canvas元素的大小与绘图表面的大小"></a>二、canvas元素的大小与绘图表面的大小</h2><p>Canvas元素有两套尺寸，一个是元素本身大小，一个是元素绘图表面的大小。</p>
+<ul>
+<li>通过<code>&lt;canvas id=”canvas” width=”600” height=”300”&gt;&lt;/canvas&gt;</code>直接设置宽、高属性会同时修改元素本身和元素绘图表面的的大小。</li>
+<li>通过css设定canvas元素的大小，只改变元素本身的大小，不影响绘图表面。</li>
+</ul>
+<p>当canvas元素的大小不符合其绘图表面大小时，浏览器就会对绘图表面进行缩放，使其符合元素大小。</p>
+<h2 id="三、canvas元素的API："><a href="#三、canvas元素的API：" class="headerlink" title="三、canvas元素的API："></a>三、canvas元素的API：</h2><p>只提供了两个属性：width和height<br>三个方法：</p>
+<ul>
+<li>getContext( ) 返回与该canvas元素相关的绘图环境对象。</li>
+<li>toDataURL( )  返回一个数据地址，可设定为img元素的src属性值。</li>
+<li>toBlob( ) 创建表示此canvas元素图像文件的Blob。</li>
+</ul>
+<h2 id="四、canvas的绘图环境："><a href="#四、canvas的绘图环境：" class="headerlink" title="四、canvas的绘图环境："></a>四、canvas的绘图环境：</h2><p>有2d绘图环境、3d绘图环境WebGL以及其他canvas规范在着手准备的绘图环境。<br>Canvas元素仅仅是为了充当绘图环境对象的容器而存在的，该环境对象提供了全部的绘制功能。</p>
+<h1 id="JavaScript中preventDefault方法"><a href="#JavaScript中preventDefault方法" class="headerlink" title="JavaScript中preventDefault方法"></a>JavaScript中preventDefault方法</h1><p>preventDefault:取消事件的默认事件。比如在页面上拖动图片时，会使图片虚化并在其上浮现一个禁止标志。此时调用该方法会取消该默认行为。</p>
+<h1 id="JavaScript中的style、currentStyle、getComputedStyle区别"><a href="#JavaScript中的style、currentStyle、getComputedStyle区别" class="headerlink" title="JavaScript中的style、currentStyle、getComputedStyle区别"></a>JavaScript中的style、currentStyle、getComputedStyle区别</h1><ul>
+<li>style：<br>在JavaScript中，通过document.getElementById(id).style.XXX可以获取到和设置XXX的值，但是，这样只能获取DOM元素style属性里的样式规则，对于通过class属性引用的外部样式表，就得不到我们想要的信息。</li>
+<li>currentStyle：<br>currentStyle可以获取到通过内联或外部引用的css样式的值，如document.getElementById(“test”).currentStyle.top。（但仅限于IE）</li>
+<li>getComputedStyle：<br>对于FF、opera、safari、chrome，可以通过getComputedStyle获取到通过内联或外部引用的CSS样式的值，如<br>dodocument.defaultView.getComputedStyle(mydiv,null).width;</li>
+<li>Ps：currentStyle和getComputedStyle只能用于获取页面元素的样式，不能用来设置相关值。</li>
+</ul>
 
-      <small class="archive-article-date">2016-03-11 by Javion</small>
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <!-- <a data-url="http://yoursite.com/2016/01/15/Knowledge-point-summary-1/" data-id="cinu2lvk600003stq2z4f4fnj" class="article-share-link">Share</a> -->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/Javascript/">Javascript</a></li></ul>
+
+    </footer>
   </div>
+<!--   
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/22/Knowledge-point-summary-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          实习知识点总结(2)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/29/interview-12-29/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">12月29日-web前端面试总结心得</div>
+    </a>
+  
+</nav>
+
+   -->
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/04/Knowledge-point-summary-5/">实习知识点总结(5)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/移动web开发/">移动web开发</a></li></ul>
-
-      <small class="archive-article-date">2016-03-04 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/26/Knowledge-point-summary-4/">实习知识点总结(4)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/移动web开发/">移动web开发</a></li></ul>
-
-      <small class="archive-article-date">2016-02-26 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/29/Knowledge-point-summary-3/">实习知识点总结(3)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/Javascript/">Javascript</a></li></ul>
-
-      <small class="archive-article-date">2016-01-29 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/22/Knowledge-point-summary-2/">实习知识点总结(2)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Javascript/">Javascript</a></li></ul>
-
-      <small class="archive-article-date">2016-01-22 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/15/Knowledge-point-summary-1/">实习知识点总结(1)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Javascript/">Javascript</a></li></ul>
-
-      <small class="archive-article-date">2016-01-15 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 </section>
 
         

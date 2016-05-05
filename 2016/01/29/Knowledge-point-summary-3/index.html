@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016 | Javion | 进击的前端工程师</title>
+  <title>实习知识点总结(3) | Javion | 进击的前端工程师</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="秒速">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Javion | 进击的前端工程师">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+  <meta name="description" content="Js实现鼠标拖动效果拖动的对象必须使用position:absolute;绝对定位，使其脱离文档流，对对象准确定位。
+一、实现思路：获取拖动对象的初始位置坐标（oX，oY），监听鼠标按下时记录鼠标初始位置坐标（sX,sY）和鼠标移动时的坐标（mX，mY），可得对象在移动中的横坐标（oX + mX -sX），纵坐标（oY + mY-sY）。然后只需在监听鼠标移动事件中，更改当前对象的left和top">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实习知识点总结(3)">
+<meta property="og:url" content="http://yoursite.com/2016/01/29/Knowledge-point-summary-3/index.html">
 <meta property="og:site_name" content="Javion | 进击的前端工程师">
-<meta property="og:description" content="秒速">
+<meta property="og:description" content="Js实现鼠标拖动效果拖动的对象必须使用position:absolute;绝对定位，使其脱离文档流，对对象准确定位。
+一、实现思路：获取拖动对象的初始位置坐标（oX，oY），监听鼠标按下时记录鼠标初始位置坐标（sX,sY）和鼠标移动时的坐标（mX，mY），可得对象在移动中的横坐标（oX + mX -sX），纵坐标（oY + mY-sY）。然后只需在监听鼠标移动事件中，更改当前对象的left和top">
+<meta property="og:updated_time" content="2016-05-05T06:05:12.321Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javion | 进击的前端工程师">
-<meta name="twitter:description" content="秒速">
+<meta name="twitter:title" content="实习知识点总结(3)">
+<meta name="twitter:description" content="Js实现鼠标拖动效果拖动的对象必须使用position:absolute;绝对定位，使其脱离文档流，对对象准确定位。
+一、实现思路：获取拖动对象的初始位置坐标（oX，oY），监听鼠标按下时记录鼠标初始位置坐标（sX,sY）和鼠标移动时的坐标（mX，mY），可得对象在移动中的横坐标（oX + mX -sX），纵坐标（oY + mY-sY）。然后只需在监听鼠标移动事件中，更改当前对象的left和top">
   
     <link rel="alternate" href="/atom.xml" title="Javion | 进击的前端工程师" type="application/atom+xml">
   
@@ -53,141 +57,99 @@
 
         
 
-          <section id="main">
-  
-  
+          <section id="main"><article id="post-Knowledge-point-summary-3" class="article article-type-post" itemscope itemprop="blogPost">
+<!--   <div class="article-meta">
+    <small class="article-date">2016-01-29 by Javion</small>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/实习知识点总结/">实习知识点总结</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016年归档</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/11/Knowledge-point-summary-6/">实习知识点总结(6)</a>
+    <h1 class="article-title" itemprop="name">
+      实习知识点总结(3)
     </h1>
   
 
+        <small class="article-date">2016-01-29 by Javion</small>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/Javascript/">Javascript</a></li></ul>
+        <h1 id="Js实现鼠标拖动效果"><a href="#Js实现鼠标拖动效果" class="headerlink" title="Js实现鼠标拖动效果"></a>Js实现鼠标拖动效果</h1><p>拖动的对象必须使用position:absolute;绝对定位，使其脱离文档流，对对象准确定位。</p>
+<h2 id="一、实现思路："><a href="#一、实现思路：" class="headerlink" title="一、实现思路："></a>一、实现思路：</h2><p>获取拖动对象的初始位置坐标（oX，oY），监听鼠标按下时记录鼠标初始位置坐标（sX,sY）和鼠标移动时的坐标（mX，mY），可得对象在移动中的横坐标（oX + mX -sX），纵坐标（oY + mY-sY）。然后只需在监听鼠标移动事件中，更改当前对象的left和top值为移动中的坐标即可。 </p>
+<h3 id="放开鼠标后固定其位置："><a href="#放开鼠标后固定其位置：" class="headerlink" title="放开鼠标后固定其位置："></a>放开鼠标后固定其位置：</h3><p>可以设置一个flag值，当鼠标按下时flag设为true，鼠标移动事件中if判断flag值为true时才能设置left和top值。放开鼠标后，flag设为false，此时便不会在执行图片移动的的功能。</p>
+<a id="more"></a>
+<h2 id="二、创建离屏canvas"><a href="#二、创建离屏canvas" class="headerlink" title="二、创建离屏canvas"></a>二、创建离屏canvas</h2><p>离屏canvas就是在js中创建一个canvas节点，并对该canvas创建2d绘图环境，执行绘制操作等，即这个canvas并不存在于页面之中。<br>离屏canvas可以用来存放临时性的图像信息。</p>
+<h3 id="使用离屏canvas的4个步骤："><a href="#使用离屏canvas的4个步骤：" class="headerlink" title="使用离屏canvas的4个步骤："></a>使用离屏canvas的4个步骤：</h3><ol>
+<li>创建用做离屏canvas的元素。</li>
+<li>设置离屏canvas的宽度与高度。</li>
+<li>在离屏canvas之中进行绘制</li>
+<li>将离屏canvas的全部或一部分内容复制到正在显示的canvas之中。</li>
+</ol>
+<h2 id="三、canvas中实现图像根据图像中心旋转"><a href="#三、canvas中实现图像根据图像中心旋转" class="headerlink" title="三、canvas中实现图像根据图像中心旋转"></a>三、canvas中实现图像根据图像中心旋转</h2><p>绘图环境的坐标系：canvas左上角为坐标原点( 0,0 )，x轴往右为正，y轴向下为正。反之为负。<br>用到2d绘图环境中的drawImage( )、translate( )、rotate( )、clearRect ( )方法</p>
+<blockquote>
+<p>drawImage( )方法：将图片绘制到目标canvas上，有如下3套参数</p>
+</blockquote>
+<ul>
+<li>drawImage( image, dx, dy)：image为原图片对象，dx和dy为在canvas上开始绘制坐标位置。</li>
+<li>drawImage( image, dx, dy, dw, dh)：前面的同上，dw,和dh为要绘制图片的宽和高。</li>
+<li>drawImage( image, sx, sy, sw, sh, dx, dy, dw, dh)：sx和sy为从原图像开始截取的坐标，sw和sh是需要截取的宽和高。其他同上。</li>
+</ul>
+<p>第1、2方法会将图像完整的绘制到canvas的指定位置，绘制时会根据目标区域宽高进行缩放。<br>第3个方法会将整张图或者一部分绘制的指定位置，也会进行缩放。</p>
+<blockquote>
+<p>translate( x, y )方法重新定义绘图环境的原点坐标，坐标原点起参照作用，默认是(0,0)为坐标原点。</p>
+<p>rotate( a*Math.PI/180 )方法的作用是将绘图环境旋转a度，不是canvas元素。</p>
+<p>clearRect ( x, y, w, h )方法清除目标区域内容，x和y为开始清除的起始坐标，w和h为需要清除的区域宽高。</p>
+</blockquote>
+<h1 id="实现过程："><a href="#实现过程：" class="headerlink" title="实现过程："></a>实现过程：</h1><p>将图像中心点与canvas中心重合，实现中心旋转图像。</p>
+<ol>
+<li>translate( canvas.width/2, canvas.height/2 )方法修改绘图坐标原点为canvas中心点。</li>
+<li>绘制图像，使其在位于canvas中央：<br>drawImage( img , -img.width/2,-img.height/2,img.width,img.height )<br>因为此时原点坐标为( canvas.width/2, canvas.height/2 )，所以将绘图坐标定于( -img.width/2,-img.height/ ) 即可将绘制起始点定图像的左上角。</li>
+<li>rotate( 角度 )，旋转绘图环境。</li>
+<li>用clearRect ( -canvas.width/2,-canvas.height/2,canvas.width,canvas.height )清除整块canvas区域内容。</li>
+<li>绘制图像：drawImage( img , -img.width/2,-img.height/2,img.width,img.height )。<br>此时绘制图像即是按某角度旋转后的图像。</li>
+</ol>
 
-      <small class="archive-article-date">2016-03-11 by Javion</small>
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <!-- <a data-url="http://yoursite.com/2016/01/29/Knowledge-point-summary-3/" data-id="cinu2lvkp00073stqdanp3thm" class="article-share-link">Share</a> -->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Javascript/">Javascript</a></li></ul>
+
+    </footer>
   </div>
+<!--   
+    
+<nav id="article-nav">
+  
+    <a href="/2016/02/26/Knowledge-point-summary-4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          实习知识点总结(4)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/22/Knowledge-point-summary-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">实习知识点总结(2)</div>
+    </a>
+  
+</nav>
+
+   -->
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/04/Knowledge-point-summary-5/">实习知识点总结(5)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/移动web开发/">移动web开发</a></li></ul>
-
-      <small class="archive-article-date">2016-03-04 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/26/Knowledge-point-summary-4/">实习知识点总结(4)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/移动web开发/">移动web开发</a></li></ul>
-
-      <small class="archive-article-date">2016-02-26 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/29/Knowledge-point-summary-3/">实习知识点总结(3)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/Javascript/">Javascript</a></li></ul>
-
-      <small class="archive-article-date">2016-01-29 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/22/Knowledge-point-summary-2/">实习知识点总结(2)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Javascript/">Javascript</a></li></ul>
-
-      <small class="archive-article-date">2016-01-22 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/15/Knowledge-point-summary-1/">实习知识点总结(1)</a>
-    </h1>
-  
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Javascript/">Javascript</a></li></ul>
-
-      <small class="archive-article-date">2016-01-15 by Javion</small>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 </section>
 
         
