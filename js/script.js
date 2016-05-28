@@ -134,4 +134,21 @@
 
     $container.removeClass('mobile-nav-on');
   });
+
+
+  
+
+  $('.navbar-toggle').on('click', function(){
+    
+    var $navbar = $('.navbar-nav');
+
+    if ($navbar.is(":visible")) {
+
+      $navbar.hide();
+
+    }else{
+      $navbar.show();
+    }
+
+  });
 })(jQuery);
