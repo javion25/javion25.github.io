@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | 白夜行 | Javion.me</title>
+  <title>Hexo配置多说评论详细教程 | 白夜行 | Javion.me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="秒速">
-<meta property="og:type" content="website">
-<meta property="og:title" content="白夜行 | Javion.me">
-<meta property="og:url" content="http://javion.me/archives/page/2/index.html">
+  <meta name="description" content="由于hexo默认评论插件为Disqus，仅支持G+、twitter等登陆，不符合我国国情。因此为了方便国内使用，选择多说来代替Dispus。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo配置多说评论详细教程">
+<meta property="og:url" content="http://javion.me/2015/12/11/duoshuoset/index.html">
 <meta property="og:site_name" content="白夜行 | Javion.me">
-<meta property="og:description" content="秒速">
+<meta property="og:description" content="由于hexo默认评论插件为Disqus，仅支持G+、twitter等登陆，不符合我国国情。因此为了方便国内使用，选择多说来代替Dispus。">
+<meta property="og:updated_time" content="2016-06-21T09:23:51.713Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="白夜行 | Javion.me">
-<meta name="twitter:description" content="秒速">
+<meta name="twitter:title" content="Hexo配置多说评论详细教程">
+<meta name="twitter:description" content="由于hexo默认评论插件为Disqus，仅支持G+、twitter等登陆，不符合我国国情。因此为了方便国内使用，选择多说来代替Dispus。">
   
     <link rel="alternate" href="/atom.xml" title="白夜行 | Javion.me" type="application/atom+xml">
   
@@ -72,66 +73,91 @@
 
         
 
-          <section id="main">
-  
-  
+          <section id="main"><article id="post-duoshuoset" class="article article-type-post" itemscope itemprop="blogPost">
+<!--   <div class="article-meta">
+    <small class="article-date">2015-12-11 by Javion</small>
+    
+  </div> -->
+  <div class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015年归档</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
-      
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/10/iframe-ajax/">用iframe模拟ajax表单提交</a>
+    <h1 class="article-title" itemprop="name">
+      Hexo配置多说评论详细教程
     </h1>
   
 
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/iframe/">iframe</a></li></ul>
-
-      <small class="archive-article-date">2015-08-10 by Javion</small>
-    </header>
-  </div>
-</article>
-  
+        <small class="article-date">2015-12-11 by Javion</small>
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header"> 
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/09/first/">个人技能总结及学习计划</a>
-    </h1>
-  
+        <h2 id="由于hexo默认评论插件为Disqus，仅支持G-、twitter等登陆，不符合我国国情。因此为了方便国内使用，选择多说来代替Dispus。"><a href="#由于hexo默认评论插件为Disqus，仅支持G-、twitter等登陆，不符合我国国情。因此为了方便国内使用，选择多说来代替Dispus。" class="headerlink" title="由于hexo默认评论插件为Disqus，仅支持G+、twitter等登陆，不符合我国国情。因此为了方便国内使用，选择多说来代替Dispus。"></a>由于hexo默认评论插件为Disqus，仅支持G+、twitter等登陆，不符合我国国情。因此为了方便国内使用，选择多说来代替Dispus。</h2><a id="more"></a>
+<h2 id="1-添加多说配置"><a href="#1-添加多说配置" class="headerlink" title="1.添加多说配置"></a>1.添加多说配置</h2><p>在<code>_config.yml</code>（注意在根目录，不是主题文件夹）中增加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">duoshuo_shortname: 你站点的short_name</span><br></pre></td></tr></table></figure></p>
+<p>看了网上很多同学都不明白此处的short_name是什么，其实你需要先在多说官网创建一个站点，用于管理你的评论。地址如下：</p>
+<p><a href="http://duoshuo.com/create-site/" target="_blank" rel="external">创建多说站点地址</a></p>
+<p><code>short_name</code> 就是上面填多说域名中<code>example.duoshuo.com</code>里的<code>example</code></p>
+<h2 id="2-修改模板"><a href="#2-修改模板" class="headerlink" title="2.修改模板"></a>2.修改模板</h2><p>如果使用的是默认模板，修改<code>themes\landscape\layout\_partial\article.ejs</code>模板</p>
+<p>如果是其他主题，请修改<code>themes\主题\layout\_partial\comment.ejs</code>模板</p>
+<p>把<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (!index &amp;&amp; post.comments &amp;&amp; config.disqus_shortname)&#123; %&gt;</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"comments"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"disqus_thread"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">noscript</span>&gt;</span>Please enable JavaScript to view the <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"//disqus.com/?ref_noscript"</span>&gt;</span>comments powered by Disqus.<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span></span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"comments"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 多说评论框 start --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ds-thread"</span> <span class="attr">data-thread-key</span>=<span class="string">"&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;"</span> <span class="attr">data-title</span>=<span class="string">"&lt;%= post.title %&gt;"</span> <span class="attr">data-url</span>=<span class="string">"&lt;%= page.permalink %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 多说评论框 end --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="keyword">var</span> duoshuoQuery = &#123;short_name:<span class="string">'&lt;%= config.duoshuo_shortname %&gt;'</span>&#125;;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> ds = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">      ds.type = <span class="string">'text/javascript'</span>;ds.async = <span class="literal">true</span>;</span><br><span class="line">      ds.src = (<span class="built_in">document</span>.location.protocol == <span class="string">'https:'</span> ? <span class="string">'https:'</span> : <span class="string">'http:'</span>) + <span class="string">'//static.duoshuo.com/embed.js'</span>;</span><br><span class="line">      ds.charset = <span class="string">'UTF-8'</span>;</span><br><span class="line">      (<span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>] </span><br><span class="line">       || <span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>]).appendChild(ds);</span><br><span class="line">    &#125;)();</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 多说公共JS代码 end --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span></span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Over</p>
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Makedown/">Makedown</a></li></ul>
+    </div>
+    <footer class="article-footer">
+      <!-- <a data-url="http://javion.me/2015/12/11/duoshuoset/" data-id="cipqs12pd000p6gtq0q6phext" class="article-share-link">Partager</a> -->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Hexo/">Hexo</a></li></ul>
 
-      <small class="archive-article-date">2015-08-09 by Javion</small>
-    </header>
+    </footer>
   </div>
+<!--   
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/29/interview-12-29/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          12月29日-web前端面试总结心得
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/22/js-closure/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">JavaScript中的匿名函数与闭包</div>
+    </a>
+  
+</nav>
+
+   -->
 </article>
-  
-  
-    </div></section>
-  
 
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-  </nav>
-</section>
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-duoshuoset" data-title="Hexo配置多说评论详细教程" data-url="http://javion.me/2015/12/11/duoshuoset/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'javion'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  </section>
 
         
 
