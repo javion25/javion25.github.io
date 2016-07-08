@@ -5,17 +5,17 @@
   
   <title>实现类似BootStrap的响应式12栏网格布局 | 白夜行 | Javion.me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。一、网格布局的用途网格布局的作用在于更有效地控制元素在网页中所占比例的大小。比如，博客中有一个留言板模块，在比较大的屏幕上，我们希望它占了右边 25% 的宽度，在手机等比较小的屏幕上，我们希望它占 100% 的宽度，出现在博客文章下方。网格布局是一种实现这一需求的办法，它的好处是，把所有的宽度分为固定栏数（常用 12 栏">
+  <meta name="description" content="今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。一、网格布局的用途网格布局的作用在于更有效地控制元素在网页中所占比例的大小。比如，博客中有一个留言板模块，在比较大的屏幕上，我们希望它占了右边 25% 的宽度，在手机等比较小的屏幕上，我们希望它占 100% 的宽度，出现在博客文章下方。网格布局是一种实现这一需求的办法，它的好处是，把所有的宽度分为固定栏数（常用 12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实现类似BootStrap的响应式12栏网格布局">
 <meta property="og:url" content="http://javion.me/2016/04/07/gridlayouts/index.html">
 <meta property="og:site_name" content="白夜行 | Javion.me">
-<meta property="og:description" content="今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。一、网格布局的用途网格布局的作用在于更有效地控制元素在网页中所占比例的大小。比如，博客中有一个留言板模块，在比较大的屏幕上，我们希望它占了右边 25% 的宽度，在手机等比较小的屏幕上，我们希望它占 100% 的宽度，出现在博客文章下方。网格布局是一种实现这一需求的办法，它的好处是，把所有的宽度分为固定栏数（常用 12 栏">
+<meta property="og:description" content="今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。一、网格布局的用途网格布局的作用在于更有效地控制元素在网页中所占比例的大小。比如，博客中有一个留言板模块，在比较大的屏幕上，我们希望它占了右边 25% 的宽度，在手机等比较小的屏幕上，我们希望它占 100% 的宽度，出现在博客文章下方。网格布局是一种实现这一需求的办法，它的好处是，把所有的宽度分为固定栏数（常用 12">
 <meta property="og:image" content="http://7xkwup.com1.z0.glb.clouddn.com/grid-elements.png">
-<meta property="og:updated_time" content="2016-06-26T12:48:52.234Z">
+<meta property="og:updated_time" content="2016-07-08T04:36:38.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实现类似BootStrap的响应式12栏网格布局">
-<meta name="twitter:description" content="今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。一、网格布局的用途网格布局的作用在于更有效地控制元素在网页中所占比例的大小。比如，博客中有一个留言板模块，在比较大的屏幕上，我们希望它占了右边 25% 的宽度，在手机等比较小的屏幕上，我们希望它占 100% 的宽度，出现在博客文章下方。网格布局是一种实现这一需求的办法，它的好处是，把所有的宽度分为固定栏数（常用 12 栏">
+<meta name="twitter:description" content="今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。一、网格布局的用途网格布局的作用在于更有效地控制元素在网页中所占比例的大小。比如，博客中有一个留言板模块，在比较大的屏幕上，我们希望它占了右边 25% 的宽度，在手机等比较小的屏幕上，我们希望它占 100% 的宽度，出现在博客文章下方。网格布局是一种实现这一需求的办法，它的好处是，把所有的宽度分为固定栏数（常用 12">
 <meta name="twitter:image" content="http://7xkwup.com1.z0.glb.clouddn.com/grid-elements.png">
   
     <link rel="alternate" href="/atom.xml" title="白夜行 | Javion.me" type="application/atom+xml">
@@ -100,7 +100,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。"><a href="#今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。" class="headerlink" title="今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。"></a>今天研究了如何实现网格布局，主要学习了<a href="http://j4n.co/blog/Creating-your-own-css-grid-system" target="_blank" rel="external">这篇文章</a>中的内容。特写此篇博客作为总结。</h3><h2 id="一、网格布局的用途"><a href="#一、网格布局的用途" class="headerlink" title="一、网格布局的用途"></a>一、网格布局的用途</h2><font size="2">网格布局的作用在于更有效地控制元素在网页中所占比例的大小。比如，博客中有一个留言板模块，在比较大的屏幕上，我们希望它占了右边 25% 的宽度，在手机等比较小的屏幕上，我们希望它占 100% 的宽度，出现在博客文章下方。网格布局是一种实现这一需求的办法，它的好处是，把所有的宽度分为固定栏数（常用 12 栏），从而更高效的控制元素宽度。</font>
+        <h3 id="今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。"><a href="#今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。" class="headerlink" title=" 今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。"></a><font size="2"> 今天研究了如何实现网格布局，主要学习了<a href="http://j4n.co/blog/Creating-your-own-css-grid-system" target="_blank" rel="external">这篇文章</a>中的内容。特写此篇博客作为总结。</font></h3><h2 id="一、网格布局的用途"><a href="#一、网格布局的用途" class="headerlink" title="一、网格布局的用途"></a>一、网格布局的用途</h2><font size="2">网格布局的作用在于更有效地控制元素在网页中所占比例的大小。比如，博客中有一个留言板模块，在比较大的屏幕上，我们希望它占了右边 25% 的宽度，在手机等比较小的屏幕上，我们希望它占 100% 的宽度，出现在博客文章下方。网格布局是一种实现这一需求的办法，它的好处是，把所有的宽度分为固定栏数（常用 12 栏），从而更高效的控制元素宽度。</font>
 
 
 <a id="more"></a>
@@ -129,10 +129,10 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://javion.me/2016/04/07/gridlayouts/" data-id="cipwocznd000kdgtq0mk4u8hm" class="article-share-link">Delen</a> -->
+      <!-- <a data-url="http://javion.me/2016/04/07/gridlayouts/" data-id="ciqd89l040009u0tqdbnq0bki" class="article-share-link">Partager</a> -->
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/响应式/">响应式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/网格布局/">网格布局</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/响应式/">响应式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/网格布局/">网格布局</a></li></ul>
 
     </footer>
   </div>
@@ -140,9 +140,18 @@
     
 <nav id="article-nav">
   
+    <a href="/2016/06/25/A-Star-Path-Finding/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          A*寻路算法初探及Js实现寻路过程
+        
+      </div>
+    </a>
+  
   
     <a href="/2016/03/20/semanteme/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ouder</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">关于HTML语义化</div>
     </a>
   
@@ -178,9 +187,9 @@
   <!-- 
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categorieën</h3>
+    <h3 class="widget-title">Catégories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习知识点总结/">实习知识点总结</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习知识点总结/">实习知识点总结</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -188,9 +197,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Labels</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/CSS/">CSS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/Canvas/">Canvas</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/Github/">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/HTML/">HTML</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/HTML5/">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/Makedown/">Makedown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/iframe/">iframe</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color2" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color2" href="/tags/响应式/">响应式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/移动web开发/">移动web开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/网格布局/">网格布局</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/语义化/">语义化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/闭包/">闭包</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/A-寻路算法/">A*寻路算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/CSS/">CSS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/Canvas/">Canvas</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/Github/">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/HTML/">HTML</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/HTML5/">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/Makedown/">Makedown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/iframe/">iframe</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color2" href="/tags/响应式/">响应式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/移动web开发/">移动web开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/网格布局/">网格布局</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color2" href="/tags/语义化/">语义化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color2" href="/tags/闭包/">闭包</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -198,18 +207,18 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 16.67px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Canvas/" style="font-size: 16.67px;">Canvas</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTML/" style="font-size: 16.67px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Makedown/" style="font-size: 10px;">Makedown</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/移动web开发/" style="font-size: 13.33px;">移动web开发</a> <a href="/tags/网格布局/" style="font-size: 10px;">网格布局</a> <a href="/tags/语义化/" style="font-size: 10px;">语义化</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+      <a href="/tags/A-寻路算法/" style="font-size: 10px;">A*寻路算法</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Canvas/" style="font-size: 17.5px;">Canvas</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Makedown/" style="font-size: 10px;">Makedown</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/移动web开发/" style="font-size: 12.5px;">移动web开发</a> <a href="/tags/网格布局/" style="font-size: 10px;">网格布局</a> <a href="/tags/语义化/" style="font-size: 10px;">语义化</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年 04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年 01月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年 08月</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年 04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年 01月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年 08月</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -217,9 +226,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/06/25/A-Star-Path-Finding/">A*寻路算法初探及Js实现寻路过程</a>
+          </li>
         
           <li>
             <a href="/2016/04/07/gridlayouts/">实现类似BootStrap的响应式12栏网格布局</a>
@@ -284,35 +297,39 @@
    -->
   
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年 04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年 01月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年 08月</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年 04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年 01月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年 08月</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
 
   
   <div class="widget-wrap">
-    <h3 class="widget-title">Categorieën</h3>
+    <h3 class="widget-title">Catégories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习知识点总结/">实习知识点总结</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习知识点总结/">实习知识点总结</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
 
   
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 16.67px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Canvas/" style="font-size: 16.67px;">Canvas</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTML/" style="font-size: 16.67px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Makedown/" style="font-size: 10px;">Makedown</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/移动web开发/" style="font-size: 13.33px;">移动web开发</a> <a href="/tags/网格布局/" style="font-size: 10px;">网格布局</a> <a href="/tags/语义化/" style="font-size: 10px;">语义化</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+      <a href="/tags/A-寻路算法/" style="font-size: 10px;">A*寻路算法</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Canvas/" style="font-size: 17.5px;">Canvas</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Makedown/" style="font-size: 10px;">Makedown</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/移动web开发/" style="font-size: 12.5px;">移动web开发</a> <a href="/tags/网格布局/" style="font-size: 10px;">网格布局</a> <a href="/tags/语义化/" style="font-size: 10px;">语义化</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
     </div>
   </div>
 
   
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/06/25/A-Star-Path-Finding/">A*寻路算法初探及Js实现寻路过程</a>
+          </li>
         
           <li>
             <a href="/2016/04/07/gridlayouts/">实现类似BootStrap的响应式12栏网格布局</a>
@@ -381,7 +398,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> | Designed by <a href="http://www.javion.me">Javion</a><br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a> | Designed by <a href="http://www.javion.me">Javion</a><br>
       <span>Copyright</span>  &copy; 2016 <a href="http://www.Javion.me">Javion.me</a>. 2016 • All rights reserved.
     </div>
   </div>

@@ -3,21 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>实习知识点总结(3) | 白夜行 | Javion.me</title>
+  <title>A*寻路算法初探及Js实现寻路过程 | 白夜行 | Javion.me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Js实现鼠标拖动效果拖动的对象必须使用position:absolute;绝对定位，使其脱离文档流，对对象准确定位。
-一、实现思路：获取拖动对象的初始位置坐标（oX，oY），监听鼠标按下时记录鼠标初始位置坐标（sX,sY）和鼠标移动时的坐标（mX，mY），可得对象在移动中的横坐标（oX + mX -sX），纵坐标（oY + mY-sY）。然后只需在监听鼠标移动事件中，更改当前对象的left和top">
+  <meta name="description" content="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。一、4个功能模块：
+二维方块地图
+
+A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们常常把地图划分成一个个小方块，通过二维数组记录每个方块的坐标值，从而可以定位到某个点。因此我们需要构建坐标系。我">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实习知识点总结(3)">
-<meta property="og:url" content="http://javion.me/2016/01/29/Knowledge-point-summary-3/index.html">
+<meta property="og:title" content="A*寻路算法初探及Js实现寻路过程">
+<meta property="og:url" content="http://javion.me/2016/06/25/A-Star-Path-Finding/index.html">
 <meta property="og:site_name" content="白夜行 | Javion.me">
-<meta property="og:description" content="Js实现鼠标拖动效果拖动的对象必须使用position:absolute;绝对定位，使其脱离文档流，对对象准确定位。
-一、实现思路：获取拖动对象的初始位置坐标（oX，oY），监听鼠标按下时记录鼠标初始位置坐标（sX,sY）和鼠标移动时的坐标（mX，mY），可得对象在移动中的横坐标（oX + mX -sX），纵坐标（oY + mY-sY）。然后只需在监听鼠标移动事件中，更改当前对象的left和top">
-<meta property="og:updated_time" content="2016-06-26T13:10:45.955Z">
+<meta property="og:description" content="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。一、4个功能模块：
+二维方块地图
+
+A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们常常把地图划分成一个个小方块，通过二维数组记录每个方块的坐标值，从而可以定位到某个点。因此我们需要构建坐标系。我">
+<meta property="og:updated_time" content="2016-07-08T08:41:36.068Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="实习知识点总结(3)">
-<meta name="twitter:description" content="Js实现鼠标拖动效果拖动的对象必须使用position:absolute;绝对定位，使其脱离文档流，对对象准确定位。
-一、实现思路：获取拖动对象的初始位置坐标（oX，oY），监听鼠标按下时记录鼠标初始位置坐标（sX,sY）和鼠标移动时的坐标（mX，mY），可得对象在移动中的横坐标（oX + mX -sX），纵坐标（oY + mY-sY）。然后只需在监听鼠标移动事件中，更改当前对象的left和top">
+<meta name="twitter:title" content="A*寻路算法初探及Js实现寻路过程">
+<meta name="twitter:description" content="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。一、4个功能模块：
+二维方块地图
+
+A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们常常把地图划分成一个个小方块，通过二维数组记录每个方块的坐标值，从而可以定位到某个点。因此我们需要构建坐标系。我">
   
     <link rel="alternate" href="/atom.xml" title="白夜行 | Javion.me" type="application/atom+xml">
   
@@ -76,12 +82,12 @@
 
         
 
-          <section id="main"><article id="post-Knowledge-point-summary-3" class="article article-type-post" itemscope itemprop="blogPost">
+          <section id="main"><article id="post-A-Star-Path-Finding" class="article article-type-post" itemscope itemprop="blogPost">
 <!--   <div class="article-meta">
-    <small class="article-date">2016-01-29 by Javion</small>
+    <small class="article-date">2016-06-25 by Javion</small>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/实习知识点总结/">实习知识点总结</a>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
   </div>
 
   </div> -->
@@ -92,57 +98,56 @@
         
   
     <h1 class="article-title" itemprop="name">
-      实习知识点总结(3)
+      A*寻路算法初探及Js实现寻路过程
     </h1>
   
 
-        <small class="article-date">2016-01-29 by Javion</small>
+        <small class="article-date">2016-06-25 by Javion</small>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Js实现鼠标拖动效果"><a href="#Js实现鼠标拖动效果" class="headerlink" title="Js实现鼠标拖动效果"></a>Js实现鼠标拖动效果</h2><p>拖动的对象必须使用position:absolute;绝对定位，使其脱离文档流，对对象准确定位。</p>
-<h2 id="一、实现思路："><a href="#一、实现思路：" class="headerlink" title="一、实现思路："></a>一、实现思路：</h2><p>获取拖动对象的初始位置坐标（oX，oY），监听鼠标按下时记录鼠标初始位置坐标（sX,sY）和鼠标移动时的坐标（mX，mY），可得对象在移动中的横坐标（oX + mX -sX），纵坐标（oY + mY-sY）。然后只需在监听鼠标移动事件中，更改当前对象的left和top值为移动中的坐标即可。 </p>
-<a id="more"></a>
-<h3 id="放开鼠标后固定其位置："><a href="#放开鼠标后固定其位置：" class="headerlink" title="放开鼠标后固定其位置："></a>放开鼠标后固定其位置：</h3><p>可以设置一个flag值，当鼠标按下时flag设为true，鼠标移动事件中if判断flag值为true时才能设置left和top值。放开鼠标后，flag设为false，此时便不会在执行图片移动的的功能。</p>
-<h2 id="二、创建离屏canvas"><a href="#二、创建离屏canvas" class="headerlink" title="二、创建离屏canvas"></a>二、创建离屏canvas</h2><p>离屏canvas就是在js中创建一个canvas节点，并对该canvas创建2d绘图环境，执行绘制操作等，即这个canvas并不存在于页面之中。<br>离屏canvas可以用来存放临时性的图像信息。</p>
-<h3 id="使用离屏canvas的4个步骤："><a href="#使用离屏canvas的4个步骤：" class="headerlink" title="使用离屏canvas的4个步骤："></a>使用离屏canvas的4个步骤：</h3><ol>
-<li>创建用做离屏canvas的元素。</li>
-<li>设置离屏canvas的宽度与高度。</li>
-<li>在离屏canvas之中进行绘制</li>
-<li>将离屏canvas的全部或一部分内容复制到正在显示的canvas之中。</li>
-</ol>
-<h2 id="三、canvas中实现图像根据图像中心旋转"><a href="#三、canvas中实现图像根据图像中心旋转" class="headerlink" title="三、canvas中实现图像根据图像中心旋转"></a>三、canvas中实现图像根据图像中心旋转</h2><p>绘图环境的坐标系：canvas左上角为坐标原点( 0,0 )，x轴往右为正，y轴向下为正。反之为负。<br>用到2d绘图环境中的drawImage( )、translate( )、rotate( )、clearRect ( )方法</p>
-<blockquote>
-<p>drawImage( )方法：将图片绘制到目标canvas上，有如下3套参数</p>
-</blockquote>
-<ul>
-<li>drawImage( image, dx, dy)：image为原图片对象，dx和dy为在canvas上开始绘制坐标位置。</li>
-<li>drawImage( image, dx, dy, dw, dh)：前面的同上，dw,和dh为要绘制图片的宽和高。</li>
-<li>drawImage( image, sx, sy, sw, sh, dx, dy, dw, dh)：sx和sy为从原图像开始截取的坐标，sw和sh是需要截取的宽和高。其他同上。</li>
+        <h3 id="最近为了开发-王牌特工-这款小游戏，学习了A-寻路算法，来实现避开障碍物并抵达目标地点的功能。"><a href="#最近为了开发-王牌特工-这款小游戏，学习了A-寻路算法，来实现避开障碍物并抵达目标地点的功能。" class="headerlink" title="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。"></a><font size="2">最近为了开发 <a href="http://javion.me/KingsMan/">王牌特工</a> 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。</font></h3><h3 id="算法具体实现过程可以学习这篇文章-本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼-）。"><a href="#算法具体实现过程可以学习这篇文章-本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼-）。" class="headerlink" title="算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。"></a>算法具体实现过程可以学习<a href="http://www.cnblogs.com/technology/archive/2011/05/26/2058842.html" target="_blank" rel="external">这篇文章</a>,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。</h3><h2 id="一、4个功能模块："><a href="#一、4个功能模块：" class="headerlink" title="一、4个功能模块："></a>一、4个功能模块：</h2><ul>
+<li>二维方块地图</li>
 </ul>
-<p>第1、2方法会将图像完整的绘制到canvas的指定位置，绘制时会根据目标区域宽高进行缩放。<br>第3个方法会将整张图或者一部分绘制的指定位置，也会进行缩放。</p>
-<blockquote>
-<p>translate( x, y )方法重新定义绘图环境的原点坐标，坐标原点起参照作用，默认是(0,0)为坐标原点。</p>
-<p>rotate( a*Math.PI/180 )方法的作用是将绘图环境旋转a度，不是canvas元素。</p>
-<p>clearRect ( x, y, w, h )方法清除目标区域内容，x和y为开始清除的起始坐标，w和h为需要清除的区域宽高。</p>
-</blockquote>
-<h1 id="实现过程："><a href="#实现过程：" class="headerlink" title="实现过程："></a>实现过程：</h1><p>将图像中心点与canvas中心重合，实现中心旋转图像。</p>
-<ol>
-<li>translate( canvas.width/2, canvas.height/2 )方法修改绘图坐标原点为canvas中心点。</li>
-<li>绘制图像，使其在位于canvas中央：<br>drawImage( img , -img.width/2,-img.height/2,img.width,img.height )<br>因为此时原点坐标为( canvas.width/2, canvas.height/2 )，所以将绘图坐标定于( -img.width/2,-img.height/ ) 即可将绘制起始点定图像的左上角。</li>
-<li>rotate( 角度 )，旋转绘图环境。</li>
-<li>用clearRect ( -canvas.width/2,-canvas.height/2,canvas.width,canvas.height )清除整块canvas区域内容。</li>
-<li>绘制图像：drawImage( img , -img.width/2,-img.height/2,img.width,img.height )。<br>此时绘制图像即是按某角度旋转后的图像。</li>
-</ol>
+<font size="2">A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们常常把地图划分成一个个小方块，通过二维数组记录每个方块的坐标值，从而可以定位到某个点。因此我们需要构建坐标系。我使用的是HTML5中的Canvas绘图，在创建2D上下文环境中以40X40为一方块分割画布。</font>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每个方块对象具有的属性</span></span><br><span class="line"><span class="keyword">var</span> block = &#123;</span><br><span class="line">  x:……, <span class="comment">// 横坐标</span></span><br><span class="line">  y:……, <span class="comment">// 纵坐标</span></span><br><span class="line">  G:……, <span class="comment">// 到该点的消耗</span></span><br><span class="line">  H:……, <span class="comment">// 到终点的消耗</span></span><br><span class="line">  F:……, <span class="comment">// G + H</span></span><br><span class="line">  parents:…… <span class="comment">// 父节点</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>开启队列</li>
+</ul>
+<font size="2">存放需要遍历查找的方块</font>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开启队列</span></span><br><span class="line"><span class="keyword">var</span> openList = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 存放开启队列</span></span><br><span class="line">  <span class="keyword">var</span> _openArr = [];</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="comment">// 添加到队列</span></span><br><span class="line">    add: <span class="function"><span class="keyword">function</span>(<span class="params">point</span>)</span>&#123;……&#125;,</span><br><span class="line">    <span class="comment">// 计算队列长度</span></span><br><span class="line">    count: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;……&#125;,</span><br><span class="line">    <span class="comment">// 得到开放队列中f值最小的点</span></span><br><span class="line">    minPoint: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;……&#125;,</span><br><span class="line">    <span class="comment">// 删除某个点</span></span><br><span class="line">    removeAt: <span class="function"><span class="keyword">function</span>(<span class="params">index</span>) </span>&#123;……&#125;,</span><br><span class="line">    <span class="comment">// 是否可以加入开启队列</span></span><br><span class="line">    exists: <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;……&#125;,</span><br><span class="line">    <span class="comment">// 点已经在开启队列中</span></span><br><span class="line">    foundPoint: <span class="function"><span class="keyword">function</span>(<span class="params">tempStart, end, point</span>) </span>&#123;……&#125;,</span><br><span class="line">    <span class="comment">// 点不在开启队列中,计算G、H、F值</span></span><br><span class="line">    notFoundPoint: <span class="function"><span class="keyword">function</span>(<span class="params">tempStart, end, point</span>) </span>&#123;……&#125;,</span><br><span class="line">    <span class="comment">// 是否到达目标点</span></span><br><span class="line">    get: <span class="function"><span class="keyword">function</span>(<span class="params">end</span>) </span>&#123;……&#125;,</span><br><span class="line">    <span class="comment">// 队列初始化</span></span><br><span class="line">    init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;……&#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>关闭队列</li>
+</ul>
+<font size="2">存放不需要查找的方块</font>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 闭合队列</span></span><br><span class="line"><span class="keyword">var</span> closeList = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> _closeArr = [];</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    add: <span class="function"><span class="keyword">function</span>(<span class="params">point</span>) </span>&#123;……&#125;,</span><br><span class="line">    init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;……&#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>A*寻路算法函数</li>
+</ul>
+<font size="2">见下一节</font>
+
+<h2 id="二、A-寻路算法的实现"><a href="#二、A-寻路算法的实现" class="headerlink" title="二、A*寻路算法的实现"></a>二、A*寻路算法的实现</h2><ul>
+<li>A*寻路算法函数</li>
+</ul>
+<p><code>findPath</code>为寻路算法函数，该函数接受两个参数<code>start</code>(开始点)和 <code>end</code>(终点)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> findPath = <span class="function"><span class="keyword">function</span>(<span class="params">start, end</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 是否抵达标志位</span></span><br><span class="line">  <span class="keyword">var</span> isArrive = <span class="literal">false</span>;</span><br><span class="line">  openList.add(start);</span><br><span class="line">  <span class="comment">// 循环</span></span><br><span class="line">  <span class="keyword">while</span>(!isArrive)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 找出F值最小的点</span></span><br><span class="line">    <span class="keyword">var</span> tempStart = openList.minPoint();</span><br><span class="line">    openList.removeAt(<span class="number">0</span>);</span><br><span class="line">    closeList.add(tempStart);</span><br><span class="line">    <span class="comment">// 找出它相邻的点</span></span><br><span class="line">    <span class="keyword">var</span> aroundPoints = sAroundPoints(tempStart);</span><br><span class="line">    <span class="comment">// 遍历所有相邻的点</span></span><br><span class="line">    aroundPoints.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item, index</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 是否已经在开启队列中</span></span><br><span class="line">      <span class="keyword">if</span> (openList.exists(item)) &#123;</span><br><span class="line">        <span class="comment">//计算G值, 如果比原来的大, 就什么都不做, 否则设置它的父节点为当前点,并更新G和F</span></span><br><span class="line">        openList.foundPoint(tempStart, end, item);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//如果它们不在开始列表里, 就加入, 并设置父节点,并计算GHF</span></span><br><span class="line">        openList.notFoundPoint(tempStart, end, item);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 是否抵达终点</span></span><br><span class="line">    openList.get(end);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 找回路径</span></span><br><span class="line">  foundPathRoad(end);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>如何找回路径</li>
+</ul>
+<p>通过终点对象的parents属性值，逐层递归找到上级节点，将每个父节点存入数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foundPathRoad = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="string">'parents'</span> <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    roadArr.unshift(obj);</span><br><span class="line">    <span class="built_in">arguments</span>.callee(obj.parents);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> roadArr;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p></p>
 
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://javion.me/2016/01/29/Knowledge-point-summary-3/" data-id="ciqd89l0m000ju0tq6orpmv3n" class="article-share-link">Partager</a> -->
+      <!-- <a data-url="http://javion.me/2016/06/25/A-Star-Path-Finding/" data-id="ciqd89kzl0000u0tqsh1efgfm" class="article-share-link">Partager</a> -->
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/Javascript/">Javascript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/A-寻路算法/">A*寻路算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
@@ -150,19 +155,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/02/26/Knowledge-point-summary-4/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
-      <div class="article-nav-title">
-        
-          实习知识点总结(4)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/22/Knowledge-point-summary-2/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/04/07/gridlayouts/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">实习知识点总结(2)</div>
+      <div class="article-nav-title">实现类似BootStrap的响应式12栏网格布局</div>
     </a>
   
 </nav>
@@ -172,7 +168,7 @@
 
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-Knowledge-point-summary-3" data-title="实习知识点总结(3)" data-url="http://javion.me/2016/01/29/Knowledge-point-summary-3/"></div>
+    <div class="ds-thread" data-thread-key="post-A-Star-Path-Finding" data-title="A*寻路算法初探及Js实现寻路过程" data-url="http://javion.me/2016/06/25/A-Star-Path-Finding/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
