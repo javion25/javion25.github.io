@@ -273,7 +273,7 @@ body {
 .article-entry dl,
 .widget dl {
   margin: 0 20px;
-  line-height: 1.6em;
+  line-height: 2em;
 }
 .article-entry ul ul,
 .widget ul ul,
@@ -426,8 +426,10 @@ body {
   clear: both;
 }
 .article-date {
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
   color: #777;
   float: left;
 }
@@ -483,6 +485,7 @@ body {
 }
 .article-header {
   padding: 20px 20px 0;
+  margin-top: 10px;
   margin-bottom: 15px;
 }
 .article-title {
@@ -514,8 +517,8 @@ a.article-title:hover {
 }
 .article-entry p,
 .article-entry table {
-  line-height: 1.6em;
-  margin: 1.6em 0;
+  line-height: 2em;
+  margin: 2em 0;
 }
 .article-entry h1,
 .article-entry h2,
@@ -544,8 +547,8 @@ a.article-title:hover {
 .article-entry ul,
 .article-entry ol,
 .article-entry dl {
-  margin-top: 1.6em;
-  margin-bottom: 1.6em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 .article-entry img,
 .article-entry video {
@@ -574,12 +577,12 @@ a.article-title:hover {
 .article-entry blockquote {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.4em;
-  margin: 1.6em 20px;
+  margin: 2em 20px;
   text-align: center;
 }
 .article-entry blockquote footer {
   font-size: 14px;
-  margin: 1.6em 0;
+  margin: 2em 0;
   font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", sans-serif;
 }
 .article-entry blockquote footer cite:before {
@@ -642,7 +645,7 @@ a.article-title:hover {
 }
 .article-footer {
   font-size: 0.85em;
-  line-height: 1.6em;
+  line-height: 2em;
   border-top: 1px solid #ddd;
   padding-top: 15px;
   margin: 0 20px 20px;
@@ -889,7 +892,7 @@ a.article-title:hover {
 }
 .article-nav-title {
   font-size: 0.85em;
-  line-height: 1.6em;
+  line-height: 2em;
   margin-top: 0.5em;
 }
 .article-share-box {
@@ -1088,7 +1091,7 @@ a.article-title:hover {
 .archive-article-header .archive-article-date {
   display: inline-block;
   float: right;
-  line-height: 1.6em;
+  line-height: 2em;
   margin-bottom: 0;
 }
 .archive-article-title {
@@ -1099,7 +1102,7 @@ a.article-title:hover {
   -moz-transition: color 0.2s;
   -ms-transition: color 0.2s;
   transition: color 0.2s;
-  line-height: 1.6em;
+  line-height: 2em;
 }
 .archive-article-title:hover {
   color: #258fb8;
@@ -1186,7 +1189,7 @@ a.article-title:hover {
   text-decoration: underline;
 }
 #footer-info {
-  line-height: 1.6em;
+  line-height: 2em;
   font-size: 0.85em;
 }
 .article-entry pre,
@@ -1199,7 +1202,7 @@ a.article-title:hover {
   border-width: 1px 0;
   overflow: auto;
   color: #ccc;
-  line-height: 22.400000000000002px;
+  line-height: 28px;
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
@@ -1255,7 +1258,7 @@ a.article-title:hover {
   padding-right: 20px;
 }
 .article-entry .highlight .line {
-  height: 22.400000000000002px;
+  height: 28px;
 }
 .article-entry .highlight .line.marked {
   background: #515151;
@@ -1463,7 +1466,7 @@ pre .javascript .function {
   border: 1px solid #f00;
 }
 .widget {
-  line-height: 1.6em;
+  line-height: 2em;
   word-wrap: break-word;
   font-size: 0.9em;
 }
