@@ -5,25 +5,16 @@
   
   <title>A*寻路算法初探及Js实现寻路过程 | 白夜行 | Javion.me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。一、4个功能模块：
-二维方块地图
-
-A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们常常把地图划分成一个个小方块，通过二维数组记录每个方块的坐标值，从而可以定位到某个点。因此我们需要构建坐标系。我">
+  <meta name="description" content="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A*寻路算法初探及Js实现寻路过程">
 <meta property="og:url" content="http://javion.me/year/06/25/A-Star-Path-Finding/index.html">
 <meta property="og:site_name" content="白夜行 | Javion.me">
-<meta property="og:description" content="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。一、4个功能模块：
-二维方块地图
-
-A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们常常把地图划分成一个个小方块，通过二维数组记录每个方块的坐标值，从而可以定位到某个点。因此我们需要构建坐标系。我">
-<meta property="og:updated_time" content="2016-07-08T08:41:36.068Z">
+<meta property="og:description" content="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。">
+<meta property="og:updated_time" content="2016-07-17T04:47:19.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A*寻路算法初探及Js实现寻路过程">
-<meta name="twitter:description" content="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。一、4个功能模块：
-二维方块地图
-
-A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们常常把地图划分成一个个小方块，通过二维数组记录每个方块的坐标值，从而可以定位到某个点。因此我们需要构建坐标系。我">
+<meta name="twitter:description" content="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。">
   
     <link rel="alternate" href="/atom.xml" title="白夜行 | Javion.me" type="application/atom+xml">
   
@@ -107,13 +98,13 @@ A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="最近为了开发-王牌特工-这款小游戏，学习了A-寻路算法，来实现避开障碍物并抵达目标地点的功能。"><a href="#最近为了开发-王牌特工-这款小游戏，学习了A-寻路算法，来实现避开障碍物并抵达目标地点的功能。" class="headerlink" title="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。"></a><font size="2">最近为了开发 <a href="http://javion.me/KingsMan/">王牌特工</a> 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。</font></h3><h3 id="算法具体实现过程可以学习这篇文章-本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼-）。"><a href="#算法具体实现过程可以学习这篇文章-本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼-）。" class="headerlink" title="算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。"></a>算法具体实现过程可以学习<a href="http://www.cnblogs.com/technology/archive/2011/05/26/2058842.html" target="_blank" rel="external">这篇文章</a>,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。</h3><h2 id="一、4个功能模块："><a href="#一、4个功能模块：" class="headerlink" title="一、4个功能模块："></a>一、4个功能模块：</h2><ul>
+        <h3 id="最近为了开发-王牌特工-这款小游戏，学习了A-寻路算法，来实现避开障碍物并抵达目标地点的功能。"><a href="#最近为了开发-王牌特工-这款小游戏，学习了A-寻路算法，来实现避开障碍物并抵达目标地点的功能。" class="headerlink" title="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。"></a><font size="2">最近为了开发 <a href="http://javion.me/KingsMan/">王牌特工</a> 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。</font></h3><h3 id="算法具体实现过程可以学习这篇文章-本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼-）。"><a href="#算法具体实现过程可以学习这篇文章-本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼-）。" class="headerlink" title="算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。"></a>算法具体实现过程可以学习<a href="http://www.cnblogs.com/technology/archive/2011/05/26/2058842.html" target="_blank" rel="external">这篇文章</a>,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。</h3><a id="more"></a>
+<h2 id="一、4个功能模块："><a href="#一、4个功能模块：" class="headerlink" title="一、4个功能模块："></a>一、4个功能模块：</h2><ul>
 <li>二维方块地图</li>
 </ul>
 <font size="2">A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们常常把地图划分成一个个小方块，通过二维数组记录每个方块的坐标值，从而可以定位到某个点。因此我们需要构建坐标系。我使用的是HTML5中的Canvas绘图，在创建2D上下文环境中以40X40为一方块分割画布。</font>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每个方块对象具有的属性</span></span><br><span class="line"><span class="keyword">var</span> block = &#123;</span><br><span class="line">  x:……, <span class="comment">// 横坐标</span></span><br><span class="line">  y:……, <span class="comment">// 纵坐标</span></span><br><span class="line">  G:……, <span class="comment">// 到该点的消耗</span></span><br><span class="line">  H:……, <span class="comment">// 到终点的消耗</span></span><br><span class="line">  F:……, <span class="comment">// G + H</span></span><br><span class="line">  parents:…… <span class="comment">// 父节点</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 <ul>
 <li>开启队列</li>
 </ul>
@@ -144,16 +135,25 @@ A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://javion.me/year/06/25/A-Star-Path-Finding/" data-id="ciqdi9th20000qotq5005coam" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://javion.me/year/06/25/A-Star-Path-Finding/" data-id="ciqq2xb0m000020tqcenx0ci6" class="article-share-link">Share</a> -->
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/A-寻路算法/">A*寻路算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/JavaScript/">JavaScript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/A-寻路算法/">A*寻路算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
 <!--   
     
 <nav id="article-nav">
+  
+    <a href="/year/07/16/ECMAScript6-note1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ECMAScript6入门笔记1-简介、let和const命令
+        
+      </div>
+    </a>
   
   
     <a href="/year/04/07/gridlayouts/" id="article-nav-older" class="article-nav-link-wrap">
@@ -195,7 +195,7 @@ A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习知识点总结/">实习知识点总结</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ECMAScript6入门笔记/">ECMAScript6入门笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习知识点总结/">实习知识点总结</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -205,7 +205,7 @@ A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/A-寻路算法/">A*寻路算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/CSS/">CSS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color2" href="/tags/Canvas/">Canvas</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/Github/">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/HTML/">HTML</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/HTML5/">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/Makedown/">Makedown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/iframe/">iframe</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/响应式/">响应式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color2" href="/tags/移动web开发/">移动web开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/网格布局/">网格布局</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/语义化/">语义化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/闭包/">闭包</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link color2" href="/tags/A-寻路算法/">A*寻路算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/CSS/">CSS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/Canvas/">Canvas</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/ECMAScript6/">ECMAScript6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/Github/">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/HTML/">HTML</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/HTML5/">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/Makedown/">Makedown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/iframe/">iframe</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/响应式/">响应式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color2" href="/tags/移动web开发/">移动web开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/网格布局/">网格布局</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/语义化/">语义化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/闭包/">闭包</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -215,7 +215,7 @@ A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/A-寻路算法/" style="font-size: 10px;">A*寻路算法</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Canvas/" style="font-size: 17.5px;">Canvas</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Makedown/" style="font-size: 10px;">Makedown</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/移动web开发/" style="font-size: 12.5px;">移动web开发</a> <a href="/tags/网格布局/" style="font-size: 10px;">网格布局</a> <a href="/tags/语义化/" style="font-size: 10px;">语义化</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+      <a href="/tags/A-寻路算法/" style="font-size: 10px;">A*寻路算法</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Canvas/" style="font-size: 17.5px;">Canvas</a> <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Makedown/" style="font-size: 10px;">Makedown</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/移动web开发/" style="font-size: 12.5px;">移动web开发</a> <a href="/tags/网格布局/" style="font-size: 10px;">网格布局</a> <a href="/tags/语义化/" style="font-size: 10px;">语义化</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
     </div>
   </div>
 
@@ -224,7 +224,7 @@ A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年 04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年 01月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年 08月</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年 07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年 04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年 01月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年 08月</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -235,6 +235,10 @@ A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/year/07/16/ECMAScript6-note1/">ECMAScript6入门笔记1-简介、let和const命令</a>
+          </li>
         
           <li>
             <a href="/year/06/25/A-Star-Path-Finding/">A*寻路算法初探及Js实现寻路过程</a>
@@ -290,10 +294,6 @@ A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们
         
           <li>
             <a href="/year/08/10/iframe-ajax/">用iframe模拟ajax表单提交</a>
-          </li>
-        
-          <li>
-            <a href="/year/08/09/first/">个人技能总结及学习计划</a>
           </li>
         
       </ul>
@@ -305,7 +305,7 @@ A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年 04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年 01月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年 08月</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年 07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年 04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年 01月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年 08月</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -314,7 +314,7 @@ A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习知识点总结/">实习知识点总结</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ECMAScript6入门笔记/">ECMAScript6入门笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习知识点总结/">实习知识点总结</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -323,7 +323,7 @@ A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/A-寻路算法/" style="font-size: 10px;">A*寻路算法</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Canvas/" style="font-size: 17.5px;">Canvas</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Makedown/" style="font-size: 10px;">Makedown</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/移动web开发/" style="font-size: 12.5px;">移动web开发</a> <a href="/tags/网格布局/" style="font-size: 10px;">网格布局</a> <a href="/tags/语义化/" style="font-size: 10px;">语义化</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+      <a href="/tags/A-寻路算法/" style="font-size: 10px;">A*寻路算法</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Canvas/" style="font-size: 17.5px;">Canvas</a> <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Makedown/" style="font-size: 10px;">Makedown</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/移动web开发/" style="font-size: 12.5px;">移动web开发</a> <a href="/tags/网格布局/" style="font-size: 10px;">网格布局</a> <a href="/tags/语义化/" style="font-size: 10px;">语义化</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
     </div>
   </div>
 
@@ -332,6 +332,10 @@ A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/year/07/16/ECMAScript6-note1/">ECMAScript6入门笔记1-简介、let和const命令</a>
+          </li>
         
           <li>
             <a href="/year/06/25/A-Star-Path-Finding/">A*寻路算法初探及Js实现寻路过程</a>
@@ -387,10 +391,6 @@ A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们
         
           <li>
             <a href="/year/08/10/iframe-ajax/">用iframe模拟ajax表单提交</a>
-          </li>
-        
-          <li>
-            <a href="/year/08/09/first/">个人技能总结及学习计划</a>
           </li>
         
       </ul>

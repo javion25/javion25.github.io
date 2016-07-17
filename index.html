@@ -74,6 +74,51 @@
 
           <section id="main">
   
+    <article id="post-ECMAScript6-note1" class="article article-type-post" itemscope itemprop="blogPost">
+<!--   <div class="article-meta">
+    <small class="article-date">2016-07-16 by Javion</small>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ECMAScript6入门笔记/">ECMAScript6入门笔记</a>
+  </div>
+
+  </div> -->
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/year/07/16/ECMAScript6-note1/">ECMAScript6入门笔记1-简介、let和const命令</a>
+    </h1>
+  
+
+        <small class="article-date">2016-07-16 by Javion</small>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>记录一下阅读阮老师的《ECMAScript入门》，本篇第一步部分包含前二章的内容：简介、let和const命令、。</p>
+        
+          <p class="article-more-link">
+            <a href="/year/07/16/ECMAScript6-note1/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <!-- <a data-url="http://javion.me/year/07/16/ECMAScript6-note1/" data-id="ciqq2xb0m000220tqf3j5kcgl" class="article-share-link">Share</a> -->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/ECMAScript6/">ECMAScript6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+<!--    -->
+</article>
+
+  
     <article id="post-A-Star-Path-Finding" class="article article-type-post" itemscope itemprop="blogPost">
 <!--   <div class="article-meta">
     <small class="article-date">2016-06-25 by Javion</small>
@@ -99,12 +144,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="最近为了开发-王牌特工-这款小游戏，学习了A-寻路算法，来实现避开障碍物并抵达目标地点的功能。"><a href="#最近为了开发-王牌特工-这款小游戏，学习了A-寻路算法，来实现避开障碍物并抵达目标地点的功能。" class="headerlink" title="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。"></a><font size=2>最近为了开发 <a href="http://javion.me/KingsMan/">王牌特工</a> 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。</h3><h3 id="算法具体实现过程可以学习这篇文章-本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼-）。"><a href="#算法具体实现过程可以学习这篇文章-本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼-）。" class="headerlink" title="算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。"></a>算法具体实现过程可以学习<a href="http://www.cnblogs.com/technology/archive/2011/05/26/2058842.html">这篇文章</a>,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。</font></h3><h2 id="一、4个功能模块："><a href="#一、4个功能模块：" class="headerlink" title="一、4个功能模块："></a>一、4个功能模块：</h2><ul>
-<li>二维方块地图</li>
-</ul>
-<font size=2>A*寻路算法是基于点到点的关系，而在游戏开发场景中，我们常常把地图划分成一个个小方块，通过二维数组记录每个方块的坐标值，从而可以定位到某个点。因此我们需要构建坐标系。我使用的是HTML5中的Canvas绘图，在创建2D上下文环境中以40X40为一方块分割画布。</font>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每个方块对象具有的属性</span></span><br><span class="line"><span class="keyword">var</span> block = &#123;</span><br><span class="line">  x:……, <span class="comment">// 横坐标</span></span><br><span class="line">  y:……, <span class="comment">// 纵坐标</span></span><br><span class="line">  G:……, <span class="comment">// 到该点的消耗</span></span><br><span class="line">  H:……, <span class="comment">// 到终点的消耗</span></span><br><span class="line">  F:……, <span class="comment">// G + H</span></span><br><span class="line">  parents:…… <span class="comment">// 父节点</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="最近为了开发-王牌特工-这款小游戏，学习了A-寻路算法，来实现避开障碍物并抵达目标地点的功能。"><a href="#最近为了开发-王牌特工-这款小游戏，学习了A-寻路算法，来实现避开障碍物并抵达目标地点的功能。" class="headerlink" title="最近为了开发 王牌特工 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。"></a><font size=2>最近为了开发 <a href="http://javion.me/KingsMan/">王牌特工</a> 这款小游戏，学习了A*寻路算法，来实现避开障碍物并抵达目标地点的功能。</h3><h3 id="算法具体实现过程可以学习这篇文章-本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼-）。"><a href="#算法具体实现过程可以学习这篇文章-本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼-）。" class="headerlink" title="算法具体实现过程可以学习这篇文章,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。"></a>算法具体实现过程可以学习<a href="http://www.cnblogs.com/technology/archive/2011/05/26/2058842.html">这篇文章</a>,本篇主要记录我使用Js实现寻路算法的过程（算法学习真是头疼- -）。</font></h3>
         
           <p class="article-more-link">
             <a href="/year/06/25/A-Star-Path-Finding/#more">Read More</a>
@@ -113,10 +153,10 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://javion.me/year/06/25/A-Star-Path-Finding/" data-id="ciqdi9th20000qotq5005coam" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://javion.me/year/06/25/A-Star-Path-Finding/" data-id="ciqq2xb0m000020tqcenx0ci6" class="article-share-link">Share</a> -->
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/A-寻路算法/">A*寻路算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/JavaScript/">JavaScript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/A-寻路算法/">A*寻路算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
@@ -149,7 +189,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。"><a href="#今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。" class="headerlink" title=" 今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。"></a><font size=2> 今天研究了如何实现网格布局，主要学习了<a href="http://j4n.co/blog/Creating-your-own-css-grid-system">这篇文章</a>中的内容。特写此篇博客作为总结。</font></h3><h2 id="一、网格布局的用途"><a href="#一、网格布局的用途" class="headerlink" title="一、网格布局的用途"></a>一、网格布局的用途</h2><font size=2>网格布局的作用在于更有效地控制元素在网页中所占比例的大小。比如，博客中有一个留言板模块，在比较大的屏幕上，我们希望它占了右边 25% 的宽度，在手机等比较小的屏幕上，我们希望它占 100% 的宽度，出现在博客文章下方。网格布局是一种实现这一需求的办法，它的好处是，把所有的宽度分为固定栏数（常用 12 栏），从而更高效的控制元素宽度。</font>
+        <h3 id="今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。"><a href="#今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。" class="headerlink" title=" 今天研究了如何实现网格布局，主要学习了这篇文章中的内容。特写此篇博客作为总结。"></a><font size=2> 今天研究了如何实现网格布局，主要学习了<a href="http://j4n.co/blog/Creating-your-own-css-grid-system">这篇文章</a>中的内容。特写此篇博客作为总结。</font></h3>
         
           <p class="article-more-link">
             <a href="/year/04/07/gridlayouts/#more">Read More</a>
@@ -158,10 +198,10 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://javion.me/year/04/07/gridlayouts/" data-id="ciqdi9ti1000oqotqejb4b6pl" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://javion.me/year/04/07/gridlayouts/" data-id="ciqq2xb1n001420tqk24ncybj" class="article-share-link">Share</a> -->
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/响应式/">响应式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/网格布局/">网格布局</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/响应式/">响应式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/网格布局/">网格布局</a></li></ul>
 
     </footer>
   </div>
@@ -203,10 +243,10 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://javion.me/year/03/20/semanteme/" data-id="ciqdi9tie0013qotq1k5t7qy2" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://javion.me/year/03/20/semanteme/" data-id="ciqq2xb1n001020tqpqy3iff9" class="article-share-link">Share</a> -->
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/语义化/">语义化</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/语义化/">语义化</a></li></ul>
 
     </footer>
   </div>
@@ -248,10 +288,10 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://javion.me/year/03/11/Knowledge-point-summary-6/" data-id="ciqdi9thv000gqotq7paefrlk" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://javion.me/year/03/11/Knowledge-point-summary-6/" data-id="ciqq2xb18000b20tqtj7hl7tv" class="article-share-link">Share</a> -->
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/Javascript/">Javascript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Javascript/">Javascript</a></li></ul>
 
     </footer>
   </div>
@@ -293,10 +333,10 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://javion.me/year/03/04/Knowledge-point-summary-5/" data-id="ciqdi9thp000dqotqgq21v20h" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://javion.me/year/03/04/Knowledge-point-summary-5/" data-id="ciqq2xb15000920tqn15i3iwo" class="article-share-link">Share</a> -->
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/移动web开发/">移动web开发</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/移动web开发/">移动web开发</a></li></ul>
 
     </footer>
   </div>
@@ -340,10 +380,10 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://javion.me/year/02/26/Knowledge-point-summary-4/" data-id="ciqdi9the0006qotqhjos8b5h" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://javion.me/year/02/26/Knowledge-point-summary-4/" data-id="ciqq2xb1n000u20tq7sf1dhtf" class="article-share-link">Share</a> -->
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/移动web开发/">移动web开发</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/移动web开发/">移动web开发</a></li></ul>
 
     </footer>
   </div>
@@ -386,10 +426,10 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://javion.me/year/01/29/Knowledge-point-summary-3/" data-id="ciqdi9thh0007qotqta32am0m" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://javion.me/year/01/29/Knowledge-point-summary-3/" data-id="ciqq2xb0m000620tqknvjxu6h" class="article-share-link">Share</a> -->
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Javascript/">Javascript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Javascript/">Javascript</a></li></ul>
 
     </footer>
   </div>
@@ -431,10 +471,10 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://javion.me/year/01/22/Knowledge-point-summary-2/" data-id="ciqdi9thk0009qotqudw739zq" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://javion.me/year/01/22/Knowledge-point-summary-2/" data-id="ciqq2xb12000720tqauoyg6q8" class="article-share-link">Share</a> -->
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/Javascript/">Javascript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color1" href="/tags/Javascript/">Javascript</a></li></ul>
 
     </footer>
   </div>
@@ -476,55 +516,10 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://javion.me/year/01/15/Knowledge-point-summary-1/" data-id="ciqdi9th80002qotqmiov55jc" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://javion.me/year/01/15/Knowledge-point-summary-1/" data-id="ciqq2xb18000d20tqqjozsere" class="article-share-link">Share</a> -->
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/Javascript/">Javascript</a></li></ul>
-
-    </footer>
-  </div>
-<!--    -->
-</article>
-
-  
-    <article id="post-interview-12-29" class="article article-type-post" itemscope itemprop="blogPost">
-<!--   <div class="article-meta">
-    <small class="article-date">2015-12-29 by Javion</small>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/杂谈/">杂谈</a>
-  </div>
-
-  </div> -->
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/year/12/29/interview-12-29/">12月29日-web前端面试总结心得</a>
-    </h1>
-  
-
-        <small class="article-date">2015-12-29 by Javion</small>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>来上海第一场面试，写写一些面试的问题及自己的解决方法。</p>
-        
-          <p class="article-more-link">
-            <a href="/year/12/29/interview-12-29/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <!-- <a data-url="http://javion.me/year/12/29/interview-12-29/" data-id="ciqdi9thz000lqotq6gpeexjh" class="article-share-link">Share</a> -->
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color5" href="/tags/Bootstrap/">Bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color4" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color3" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/jQuery/">jQuery</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link color2" href="/tags/Javascript/">Javascript</a></li></ul>
 
     </footer>
   </div>
@@ -548,7 +543,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习知识点总结/">实习知识点总结</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ECMAScript6入门笔记/">ECMAScript6入门笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习知识点总结/">实习知识点总结</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -558,7 +553,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/A-寻路算法/">A*寻路算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/CSS/">CSS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color2" href="/tags/Canvas/">Canvas</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/Github/">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/HTML/">HTML</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/HTML5/">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/Makedown/">Makedown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/iframe/">iframe</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/响应式/">响应式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color2" href="/tags/移动web开发/">移动web开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/网格布局/">网格布局</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/语义化/">语义化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/闭包/">闭包</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link color2" href="/tags/A-寻路算法/">A*寻路算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/CSS/">CSS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/Canvas/">Canvas</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/ECMAScript6/">ECMAScript6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/Github/">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/HTML/">HTML</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/HTML5/">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/Makedown/">Makedown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/iframe/">iframe</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color4" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link color1" href="/tags/响应式/">响应式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color2" href="/tags/移动web开发/">移动web开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/网格布局/">网格布局</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color5" href="/tags/语义化/">语义化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link color3" href="/tags/闭包/">闭包</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -568,7 +563,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/A-寻路算法/" style="font-size: 10px;">A*寻路算法</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Canvas/" style="font-size: 17.5px;">Canvas</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Makedown/" style="font-size: 10px;">Makedown</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/移动web开发/" style="font-size: 12.5px;">移动web开发</a> <a href="/tags/网格布局/" style="font-size: 10px;">网格布局</a> <a href="/tags/语义化/" style="font-size: 10px;">语义化</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+      <a href="/tags/A-寻路算法/" style="font-size: 10px;">A*寻路算法</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Canvas/" style="font-size: 17.5px;">Canvas</a> <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Makedown/" style="font-size: 10px;">Makedown</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/移动web开发/" style="font-size: 12.5px;">移动web开发</a> <a href="/tags/网格布局/" style="font-size: 10px;">网格布局</a> <a href="/tags/语义化/" style="font-size: 10px;">语义化</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
     </div>
   </div>
 
@@ -577,7 +572,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年 04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年 01月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年 08月</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年 07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年 04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年 01月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年 08月</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -588,6 +583,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/year/07/16/ECMAScript6-note1/">ECMAScript6入门笔记1-简介、let和const命令</a>
+          </li>
         
           <li>
             <a href="/year/06/25/A-Star-Path-Finding/">A*寻路算法初探及Js实现寻路过程</a>
@@ -643,10 +642,6 @@
         
           <li>
             <a href="/year/08/10/iframe-ajax/">用iframe模拟ajax表单提交</a>
-          </li>
-        
-          <li>
-            <a href="/year/08/09/first/">个人技能总结及学习计划</a>
           </li>
         
       </ul>
@@ -658,7 +653,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年 04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年 01月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年 08月</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年 07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年 06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年 04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年 03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年 02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年 01月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年 12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年 08月</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -667,7 +662,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习知识点总结/">实习知识点总结</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ECMAScript6入门笔记/">ECMAScript6入门笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习知识点总结/">实习知识点总结</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂谈/">杂谈</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -676,7 +671,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/A-寻路算法/" style="font-size: 10px;">A*寻路算法</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Canvas/" style="font-size: 17.5px;">Canvas</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Makedown/" style="font-size: 10px;">Makedown</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/移动web开发/" style="font-size: 12.5px;">移动web开发</a> <a href="/tags/网格布局/" style="font-size: 10px;">网格布局</a> <a href="/tags/语义化/" style="font-size: 10px;">语义化</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+      <a href="/tags/A-寻路算法/" style="font-size: 10px;">A*寻路算法</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Canvas/" style="font-size: 17.5px;">Canvas</a> <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Makedown/" style="font-size: 10px;">Makedown</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/移动web开发/" style="font-size: 12.5px;">移动web开发</a> <a href="/tags/网格布局/" style="font-size: 10px;">网格布局</a> <a href="/tags/语义化/" style="font-size: 10px;">语义化</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
     </div>
   </div>
 
@@ -685,6 +680,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/year/07/16/ECMAScript6-note1/">ECMAScript6入门笔记1-简介、let和const命令</a>
+          </li>
         
           <li>
             <a href="/year/06/25/A-Star-Path-Finding/">A*寻路算法初探及Js实现寻路过程</a>
@@ -740,10 +739,6 @@
         
           <li>
             <a href="/year/08/10/iframe-ajax/">用iframe模拟ajax表单提交</a>
-          </li>
-        
-          <li>
-            <a href="/year/08/09/first/">个人技能总结及学习计划</a>
           </li>
         
       </ul>
